@@ -13,7 +13,7 @@
     vertical: {},
     horizontal: {}
   }
-  var Waypoint = window.Waypoint
+  var Waypoint = window["${waypoint}${version}"]
 
   /* http://imakewebthings.com/waypoints/api/group */
   function Group(options) {

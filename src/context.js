@@ -7,7 +7,7 @@
 
   var keyCounter = 0
   var contexts = {}
-  var Waypoint = window.Waypoint
+  var Waypoint = window["${waypoint}${version}"]
   var oldWindowLoad = window.onload
 
   /* http://imakewebthings.com/waypoints/api/context */

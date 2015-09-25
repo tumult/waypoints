@@ -13,9 +13,9 @@
   ].join('')
 
   function checkWaypointStyles() {
-    var originalRefresh = window.Waypoint.Context.prototype.refresh
+    var originalRefresh = window["${waypoint}${version}"].Context.prototype.refresh
 
-    window.Waypoint.Context.prototype.refresh = function() {
+    window["${waypoint}${version}"].Context.prototype.refresh = function() {
       for (var axis in this.waypoints) {
         for (var key in this.waypoints[axis]) {
           var waypoint = this.waypoints[axis][key]

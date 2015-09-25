@@ -1,7 +1,7 @@
 (function() {
   'use strict'
 
-  var Waypoint = window.Waypoint
+  var Waypoint = window["${waypoint}${version}"]
 
   function isWindow(element) {
     return element === element.window

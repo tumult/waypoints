@@ -156,5 +156,5 @@
     }
   }
 
-  window.Waypoint = Waypoint
+  window["${waypoint}${version}"] = Waypoint
 }())
