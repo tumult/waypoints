@@ -21,12 +21,32 @@
 
   NoFrameworkAdapter.prototype.innerHeight = function() {
     var isWin = isWindow(this.element)
-    return isWin ? this.element.innerHeight : this.element.clientHeight
+    var height = 0
+    if (isWin) {
+      height = this.element.innerHeight
+    } else {
+      height = this.element.clientHeight
+      if (this.element.getBoundingClientRect) {
+        var rect = this.element.getBoundingClientRect()
+        height = rect.bottom - rect.top
+      }
+    }
+    return height
   }
 
   NoFrameworkAdapter.prototype.innerWidth = function() {
     var isWin = isWindow(this.element)
-    return isWin ? this.element.innerWidth : this.element.clientWidth
+    var width = 0
+    if (isWin) {
+      width = this.element.innerWidth
+    } else {
+      width = this.element.clientWidth
+      if (this.element.getBoundingClientRect) {
+        var rect = this.element.getBoundingClientRect()
+        width = rect.right - rect.left
+      }
+    }
+    return width 
   }
 
   NoFrameworkAdapter.prototype.off = function(event, handler) {
